@@ -217,7 +217,6 @@ export default function Projects() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 z-50 bg-[#0a0b0d]/90 backdrop-blur-md p-6 pt-24 pb-6 md:p-12 flex justify-center items-start md:items-center"
-              id="project_details_modal"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
