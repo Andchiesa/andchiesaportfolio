@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    background-color: #fcfcfd;
+    color: #111217;
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+  }
+
+  /* Custom high-contrast scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f4f5f7;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d1d5db;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Subtle dotted grid background overlay */
+.grid-overlay {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Smooth gradient glows */
+.radial-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.01) 0%, transparent 80%);
+}
+
+.brand-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(239, 68, 68, 0.06) 0%, transparent 60%);
+}
+
+/* Animated gradient text helper */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-moving-gradient {
+  background-size: 200% auto;
+  animation: gradient-move 4s ease infinite;
+}
+
+/* Custom mirror-like reflection sweep for text branding */
+@keyframes text-reflect-glow {
+  0% { background-position: -150% center; }
+  30% { background-position: 150% center; }
+  100% { background-position: 150% center; }
+}
+
+.animate-text-reflect {
+  background: linear-gradient(
+    110deg,
+    #111217,
+    #111217 40%,
+    #dddddd 48%,
+    #ffffff 50%,
+    #dddddd 52%,
+    #111217 60%,
+    #111217
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-reflect-glow 5s ease-in-out infinite;
+}
+
+@keyframes text-reflect-glow-hover {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.group:hover .animate-text-reflect {
+  animation: text-reflect-glow-hover 1.5s ease-in-out forwards;
+}
+
+.group:hover .animate-text-reflect-chiesa {
+  background: linear-gradient(
+    110deg,
+    #e21b5a,
+    #e21b5a 40%,
+    #ffffff 48%,
+    #ffffff 50%,
+    #ffffff 52%,
+    #e21b5a 60%,
+    #e21b5a
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-reflect-glow-hover 1.5s ease-in-out 0.2s forwards;
+}
+
+/* Elegant typing / typewriter animation for the name Chiesa */
+@keyframes typing-steps {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret-finite {
+  from, to { border-color: transparent; }
+  50% { border-color: #e21b5a; }
+}
+
+.animate-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  border-right: 2px solid transparent;
+  width: 0;
+  animation: 
+    typing-steps 1.8s steps(6, end) forwards,
+    blink-caret-finite 0.6s step-end 4;
+  animation-delay: 0.8s;
+}
+
+/* Cybernetic Error Glitch Effect styling for by Anderson Chiesa */
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20% 0 30% 0);
+    transform: translate(-1px, -1px);
+  }
+  20% {
+    clip-path: inset(60% 0 10% 0);
+    transform: translate(1px, 1px);
+  }
+  40% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(1px, -1px);
+  }
+  80% {
+    clip-path: inset(45% 0 45% 0);
+    transform: translate(-1px, -1px);
+  }
+  100% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translate(1px, 1px);
+  }
+  20% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-1px, -1px);
+  }
+  40% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translate(1.5px, -1px);
+  }
+  60% {
+    clip-path: inset(5% 0 85% 0);
+    transform: translate(-1px, 1.5px);
+  }
+  80% {
+    clip-path: inset(30% 0 30% 0);
+    transform: translate(1px, -1px);
+  }
+  100% {
+    clip-path: inset(80% 0 5% 0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes glitch-vibration {
+  0%, 100% { transform: skew(0deg); }
+  10% { transform: skew(-1deg); }
+  20% { transform: skew(0.5deg); }
+  35% { transform: skew(0deg); }
+  50% { transform: skew(-0.5deg); }
+  65% { transform: skew(1deg); }
+  80% { transform: skew(-1deg); }
+  90% { transform: skew(0.5deg); }
+}
+
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  color: #dc2626; /* text-red-600 */
+  animation: glitch-vibration 3s infinite linear;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 #00ffff, 0 1px #00ffff;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 #ff00ff, 0 -1px #ff00ff;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-2 1.5s infinite linear alternate-reverse;
+}
+
+/* Custom robust moving gradient for the word TECNOLOGIA */
+.styled-gradient-tecnologia {
+  background: linear-gradient(90deg, #e21b5a, #ef4444, #f97316, #ef4444, #e21b5a);
+  background-size: 200% auto;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  animation: gradient-move 4s linear infinite;
+  display: block;
+}
+
+

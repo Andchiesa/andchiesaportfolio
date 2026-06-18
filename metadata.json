@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Anderson Chiesa",
+  "description": "Portfólio interativo com interfaces de design cinematográfico inovadoras inspiradas em ficção científica, robótica e editoriais de luxo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
