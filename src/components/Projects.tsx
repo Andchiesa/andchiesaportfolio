@@ -216,7 +216,7 @@ export default function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-[#0a0b0d]/90 backdrop-blur-md p-4 md:p-8 flex items-center justify-center"
+              className="fixed inset-0 z-50 bg-[#0a0b0d]/90 backdrop-blur-md p-6 pt-24 pb-6 md:p-12 flex justify-center items-start md:items-center"
               id="project_details_modal"
             >
               <motion.div
@@ -224,7 +224,7 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 30 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full max-w-5xl bg-white border border-black/10 rounded-2xl overflow-hidden shadow-2xl relative max-h-full flex flex-col"
+                className="w-full max-w-5xl bg-white border border-black/10 rounded-2xl overflow-hidden shadow-2xl relative flex flex-col max-h-[calc(100dvh-7rem)] md:max-h-[calc(100dvh-6rem)]"
               >
                 {/* Adorno Cinematográfico de Scanner */}
                 <div className="h-[3px] w-full shrink-0 bg-gradient-to-r from-red-500/20 via-red-600 to-red-500/20" />
